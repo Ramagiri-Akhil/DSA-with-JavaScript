@@ -10,6 +10,8 @@
     8 Best Time to Buy and Sell Stock
     9 Sorting colors
     10 Maximum sub Array
+    11 Majority element 
+    12 Trapping rain water
 */
 
 // 1 Left rotation by 1 element
@@ -207,23 +209,23 @@ let arr  = [1,2,3,4,5]
 
 // 8 Best Time to Buy and Sell Stock (leetcode problem number: 121)
 
-// let prices = [7,1,5,3,6,4];
-// var MaxProfit=function(prices){
-//     let MaxProfit=0;
-//     let MinPrice = prices[0];
-//     for(let i = 1; i < prices.length; i++){
-//         if( prices[i] < MinPrice ){
-//             MinPrice = prices[i];
-//         }else{
-//             let Profit = prices[i] - MinPrice;
-//             MaxProfit = Math.max(MaxProfit,Profit)
-//         }
-//     }
-//     return MaxProfit;
-// }
+let prices = [7,1,5,3,6,4];
+var MaxProfit=function(prices){
+    let MaxProfit=0;
+    let MinPrice = prices[0];
+    for(let i = 1; i < prices.length; i++){
+        if( prices[i] < MinPrice ){
+            MinPrice = prices[i];
+        }else{
+            let Profit = prices[i] - MinPrice;
+            MaxProfit = Math.max(MaxProfit,Profit)
+        }
+    }
+    return MaxProfit;
+}
 
-// let profit = MaxProfit(prices)
-// console.log(`Profit equal to: ${profit}`);
+let profit = MaxProfit(prices)
+console.log(`Profit equal to: ${profit}`);
 
 
 // 9 Sorting colors (leetcode problem number:75 )
@@ -292,3 +294,75 @@ var MajorityElement = function(arrs){
 
 let a = MajorityElement(arrs)
 console.log(`Majority element in the array is: ${a}`);
+
+
+// 12 Trapping rain water (leetcode question number: 42)
+
+// let height = [4,2,0,3,2,5];
+// let left = new Array(height.length);
+// let right = new Array(height.length);
+// let Maxleft =  height[0];
+// let Maxright = height[height.length-1];
+// left[0] = Maxleft; right[right.length-1]=Maxright;
+
+// for(let i = 1 ; i < height.length; i++){
+//     Maxleft = Math.max(height[i],Maxleft)
+//     left[i] = Maxleft;
+// }
+// for(let i = height.length-2 ; i >= 0; i--){
+//     Maxright = Math.max(height[i],Maxright)
+//     right[i] = Maxright;
+// }
+// let ans = 0;
+// for(let i = 0 ; i < height.length ; i++){
+//     ans += Math.min(left[i],right[i])-height[i]
+// }
+// console.log(ans);
+
+// 13 Single Number (leetcode question number:136)
+
+let single = [ 4,1,2,1,2];
+var SingleNum=function(single){
+    let result = 0;
+    for(let i = 0; i < single.length; i++ ){
+        result = result^single[i]  // js converts numbers to binary codes and performs XOR operation
+    }
+    return result
+}
+let d = SingleNum(single);
+console.log(`Non repeated single element in the array is:${d}`);
+
+
+// 14 Pow(X,n) with out using built-in pow 
+
+let x = 2 , n = 10;
+if( n === 0){
+    console.log(1);
+    ;
+}
+if( n < 0){
+    x = 1/x;
+    n = -n
+}
+
+let result = 1;
+
+while(n > 0){
+    if(n%2 == 1){
+        result *= x
+    }
+    x *= x
+    n = Math.floor(n/2)
+}
+
+console.log(result);
+
+let nums = [1,3,4,2,2];
+let e = 0
+while(e < nums.length){
+    if(nums[e] === nums[e+1]){
+        console.log(nums[e]);
+    }else{
+        e++
+    }
+}
