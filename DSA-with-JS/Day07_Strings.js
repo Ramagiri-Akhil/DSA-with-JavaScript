@@ -196,3 +196,49 @@ console.log(copy2);
 
 const isAnagram = (copy1 === copy2)
 console.log(isAnagram);
+
+
+// // Bubble sort
+// let num = [23,43,23,1,2,3];
+// n = num.length;
+// for(let i = 0 ; i < n-1; i ++){
+//     for(let j = 0; j < n-1-i; j++){
+//         if(num[j]>num[j+1]){
+//             let temp = num[j]
+//             num[j] = num[j+1];
+//             num[j+1] = temp
+//         }
+//     }
+// }
+// console.log(num);
+
+
+// // Selection sort;
+// for(let i = 0 ; i < n-1; i ++){
+//     let minIndex = i
+//     for(j = i +1 ; j < n; j++){
+//         if(num[minIndex]> num[j]){
+//             minIndex = num[j]
+//         }
+//         if(minIndex!=i){
+//             let temp = num[minIndex];
+//             num[minIndex] = num[i];
+//             min[i] = temp
+//         }
+//     }   
+// }
+// console.log(num);
+
+
+// // Insertion sort 
+// for(let i = 0; i < n ; i ++){
+//     let j = i-1
+//     let key = num[i]
+//     while(j >=0 && num[j]>key){
+//         num[j+1] = num[j]
+//         j--
+//     }
+//     num[j+1] = key
+// }
+// console.log(num);
+
